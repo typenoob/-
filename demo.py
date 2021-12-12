@@ -22,7 +22,7 @@ class index:
         frame2 = tk.Frame(top, relief=tk.RAISED, borderwidth=2)
         frame2.configure(bg='blue')
         frame2.pack(side=tk.BOTTOM, fill=tk.BOTH, ipadx=13, ipady=13, expand=1)
-        logo = ImageTk.PhotoImage(Image.open("./logo.png"))
+        logo = ImageTk.PhotoImage(Image.open("./mmm/logo.png"))
         tk.Label(frame1, image=logo, borderwidth=0).pack()
         tk.Button(frame1, text="创造模式", height=5,
                   width=20, command=createMode(top)).pack()

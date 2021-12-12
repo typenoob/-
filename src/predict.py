@@ -15,4 +15,4 @@ def predict(data):
 
 
 if __name__ == '__main__':
-    print(predict(encode('test.png')))
+    print(predict(encode('./mmm/test.png')))

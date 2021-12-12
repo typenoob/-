@@ -1,2 +1,2 @@
 import predict
-print(predict.predict(predict.encode('test.png')))
+print(predict.predict(predict.encode('./mmm/test.png')))
