@@ -5,6 +5,7 @@
 想象力和创意思维往往需要通过文字或图的方式进行表达，为激发孩子的想象力、培养创造力和执行力，用python程序开发一个有利于孩子创意创作的随想绘图板。
 
 # 目录结构
+
 │  1.py
 │  demo.py
 │  README.md
@@ -45,6 +46,6 @@
 
 ## 致谢
 
-[基于浏览器的协作式UI设计工具figma](https://www.figma.com/)
-[ParthJadhav](https://github.com/ParthJadhav)提供的[Tkinter界面快速构建工具](https://github.com/ParthJadhav/Tkinter-Designer)
-[Eonyang](https://github.com/EonYang)提供的[涂鸦分类服务器构建工具](https://github.com/EonYang/doodle-classification-server)
+- [基于浏览器的协作式UI设计工具figma](https://www.figma.com/)
+- [ParthJadhav](https://github.com/ParthJadhav)提供的[Tkinter界面快速构建工具](https://github.com/ParthJadhav/Tkinter-Designer)
+- [Eonyang](https://github.com/EonYang)提供的[涂鸦分类服务器构建工具](https://github.com/EonYang/doodle-classification-server)
