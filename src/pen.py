@@ -58,6 +58,7 @@ class Pen:
         self.clear.append(1)
 
 
+
 if __name__ == '__main__':
     window = tk.Tk()
     window.geometry("1024x648")
@@ -66,7 +67,7 @@ if __name__ == '__main__':
     canvas = tk.Canvas(window, width=1000, height=1000,
                        highlightthickness=0, bg='#AFEEEE')
     canvas.pack()
-    pen(3).bind(canvas)
+    Pen(3).bind(canvas)
     menu = tk.Menu(window, tearoff=0)  # 不加 tearoff=0 的会出现可弹出选项
     menu.add_command(label="撤销", command=lambda: Pen(3).re(rev=1))
     menu.add_command(label="恢复", command=lambda: Pen(3).re(rec=1))

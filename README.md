@@ -26,7 +26,7 @@
     │  main.py
     │  pen.py
     │  predict.py
-    │
+    │  function.py
 ```
 
 ## 提供的类或函数接口
@@ -46,7 +46,27 @@
 | encode  | 文件路径(string)         | 图片的base64编码(string) | 将一个图片文件base64编码                         |
 | predict | 图片的base64编码(string) | 预测的json字符串(string) | json的prediction->name提供了前五可能性的物体名称 |
 
+### function.py
+
+| 名称        | 参数 | 返回       | 解释           |
+| ----------- | ---- | ---------- | -------------- |
+| message     | 无   | 返回提示框 | 提示未选择粗细 |
+| stopDraw    | 事件 | 无         | 停止绘画       |
+| startDraw   | 事件 | 无         | 开始绘画       |
+| mysave      | 事件 | 暂无完成   | 保存           |
+| myyqt       | 事件 | 无         | 油漆桶         |
+| myLine      | 事件 | 无         | 直线           |
+| myLineArrow | 事件 | 无         | 箭头直线       |
+| myRect      | 事件 | 无         | 矩形           |
+| myOval      | 事件 | 无         | 椭圆           |
+| myPen       | 事件 | 无         | 画笔           |
+| myErasor    | 事件 | 无         | 橡皮擦         |
+
+
+
 ## 致谢
+
+
 
 - [基于浏览器的协作式UI设计工具figma](https://www.figma.com/)
 - [ParthJadhav](https://github.com/ParthJadhav)提供的[Tkinter界面快速构建工具](https://github.com/ParthJadhav/Tkinter-Designer)

@@ -184,9 +184,7 @@ class DrawApp(Frame):
             self.y = event.y
     def myErasor(self, event):
             self.startDraw(event)
-            self.drawpad.create_rectangle(event.x-20, event.y-20, event.x, event.y,
-                                          outline=self.bgcolor,
-                                     fill=self.bgcolor)
+            self.drawpad.create_rectangle(event.x-20, event.y-20, event.x, event.y,outline=self.bgcolor,fill=self.bgcolor)
             self.x = event.x
             self.y = event.y
     def message(self):
