@@ -1,14 +1,15 @@
 
 import tkinter as tk
 from tkinter.simpledialog import *
-
+import color
+fgcolor=color.fgcolor
 
 class Shape:
     def __init__(self, thick):
         self.thick = thick
         self.x = 0
         self.y = 0
-        self.fgcolor = "black"
+        self.fgcolor = fgcolor
         self.lastDraw = 0
         self.startDrawFlag = False
         self.drawpad = canvas
@@ -65,6 +66,7 @@ if __name__ == '__main__':
     canvas = tk.Canvas(window, width=1000, height=1000,
                        highlightthickness=0, bg='#AFEEEE')
     canvas.pack()
+    fgcolor = color.color()
     Shape(3).bind(canvas, 3)
     window.mainloop()
 
