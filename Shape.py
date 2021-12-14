@@ -66,7 +66,8 @@ if __name__ == '__main__':
     canvas = tk.Canvas(window, width=1000, height=1000,
                        highlightthickness=0, bg='#AFEEEE')
     canvas.pack()
-    fgcolor = color.color()
+    color.fgcolor = color.color()
+    fgcolor=color.fgcolor
     Shape(3).bind(canvas, 3)
     window.mainloop()
 

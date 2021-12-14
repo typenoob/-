@@ -1,6 +1,6 @@
 import tkinter as tk
 import color
-fgcolor="red"
+fgcolor=color.fgcolor
 class Pen:
     draw_point = ['', '']  # 用于储存拖拉鼠标时的点
     revoke = []  # 用于储存每次鼠标绘图操作的ID供撤销用[[...],[...],[...]]
@@ -67,7 +67,8 @@ if __name__ == '__main__':
     canvas = tk.Canvas(window, width=1000, height=1000,
                        highlightthickness=0, bg='#AFEEEE')
     canvas.pack()
-    fgcolor=color.color()
+    color.fgcolor=color.color()
+    fgcolor=color.fgcolor
     Pen(3).bind(canvas)
     menu = tk.Menu(window, tearoff=0)  # 不加 tearoff=0 的会出现可弹出选项
     menu.add_command(label="撤销", command=lambda: Pen(3).re(rev=1))
