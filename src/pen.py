@@ -1,6 +1,6 @@
 import tkinter as tk
-import color
-fgcolor=color.fgcolor
+
+
 class Pen:
     draw_point = ['', '']  # 用于储存拖拉鼠标时的点
     revoke = []  # 用于储存每次鼠标绘图操作的ID供撤销用[[...],[...],[...]]
@@ -26,13 +26,14 @@ class Pen:
             self.recover[-1].extend(point)  # 在新建的恢复记录列表里记录第一个点
         else:
             self.revoke[-1].append(
-                canvas.create_line(self.draw_point[0], self.draw_point[1], event.x, event.y, fill=fgcolor, width=self.thick,
+                self.canvas.create_line(self.draw_point[0], self.draw_point[1], event.x, event.y, fill="#476042", width=self.thick,
                                    tags="line")
             )  # 绘制的线段并保存到撤销记录的末次列表
             self.draw_point[:] = point  # 保存拖动点，覆盖上一次
             self.recover[-1].extend(point)  # 保存此次传递的点坐标到恢复记录的末次列表
 
     def bind(self, canvas):
+        self.canvas = canvas
         canvas.bind("<B1-Motion>", self.paint)  # 设定拖动鼠标左键画线段
         canvas.bind("<ButtonRelease-1>", lambda event: self.paint(0))
 
@@ -58,7 +59,6 @@ class Pen:
         self.clear.append(1)
 
 
-
 if __name__ == '__main__':
     window = tk.Tk()
     window.geometry("1024x648")
@@ -67,8 +67,6 @@ if __name__ == '__main__':
     canvas = tk.Canvas(window, width=1000, height=1000,
                        highlightthickness=0, bg='#AFEEEE')
     canvas.pack()
-    color.fgcolor=color.color()
-    fgcolor=color.fgcolor
     Pen(3).bind(canvas)
     menu = tk.Menu(window, tearoff=0)  # 不加 tearoff=0 的会出现可弹出选项
     menu.add_command(label="撤销", command=lambda: Pen(3).re(rev=1))

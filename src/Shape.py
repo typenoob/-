@@ -1,8 +1,7 @@
 
 import tkinter as tk
 from tkinter.simpledialog import *
-import color
-fgcolor=color.fgcolor
+
 
 class Shape:
     def __init__(self, thick):
@@ -67,7 +66,6 @@ if __name__ == '__main__':
                        highlightthickness=0, bg='#AFEEEE')
     canvas.pack()
     color.fgcolor = color.color()
-    fgcolor=color.fgcolor
+    fgcolor = color.fgcolor
     Shape(3).bind(canvas, 3)
     window.mainloop()
-

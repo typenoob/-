@@ -15,12 +15,9 @@
 ├─build # 利用Tkinter-Designer构建的界面
 │  │  gui.py
 │  │
-│  └─assets
+│  └─assets # 用到的多媒体素材
 ├─doodle-classification-server # 基于docker构建涂鸦预测并提供http api的项目
 │
-├─mmm # 用到的多媒体素材
-│      logo.png
-│      test.png
 │
 └─src # 源代码
     │  main.py

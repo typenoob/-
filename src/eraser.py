@@ -8,8 +8,6 @@ class Eraser:
         self.y = 0
         self.lastDraw = 0
         self.startDrawFlag = False
-        self.drawpad = canvas
-        self.drawpad.pack()
 
     def stopDraw(self, event):
         self.startDrawFlag = False
@@ -25,14 +23,15 @@ class Eraser:
     def myEraser(self, event):
         self.startDraw(event)
         self.drawpad.create_rectangle(event.x - 20, event.y - 20, event.x, event.y,
-                                  outline='white',
-                                  fill='white')
+                                      outline='white',
+                                      fill='white')
         self.x = event.x
         self.y = event.y
 
     def bind(self, canvas):
-            canvas.bind("<B1-Motion>", self.myEraser)
-            canvas.bind("<ButtonRelease-1>", self.stopDraw)
+        self.drawpad = canvas
+        canvas.bind("<B1-Motion>", self.myEraser)
+        canvas.bind("<ButtonRelease-1>", self.stopDraw)
 
 
 if __name__ == '__main__':
