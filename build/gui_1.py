@@ -13,6 +13,15 @@ sys.path.append(".")
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 
+def thickadd(t):
+    global thick
+    thick=t+2
+    return thick
+
+def thickreduce(t):
+    global thick
+    thick=t-2
+    return thick
 
 def choose():
     global button_1, button_2, button_3, button_4, button_5, button_6, button_7
@@ -40,7 +49,7 @@ def choose():
         borderwidth=0,
         highlightthickness=0,
         command=lambda: print("button_1 clicked"),
-        relief="flat",
+        relief="flat"
     )
     button_2_.place(x=100.0, y=260.0, width=60.0, height=200.0)
     button_3_ = Button(
@@ -58,7 +67,8 @@ def choose():
 def paint():
     from src import pen
     global draw
-    pen.Pen(3).bind(draw)
+    global thick
+    pen.Pen(thick).bind(draw)
     global button_1, button_2, button_3, button_4, button_5, button_6, button_7
     button_1['image'] = button_image_1
     button_2['image'] = button_image_2
@@ -73,7 +83,7 @@ def paint():
         font=("YeonSung Regular", 26 * -1),
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_1 clicked"),
+        command=lambda: pen.Pen(thick=thickadd(thick)).bind(draw),
         relief="flat"
     )
     button_1_.place(x=100.0, y=40.0, width=60.0, height=200.0)
@@ -145,8 +155,10 @@ def eraser():
 
 def round():
     global draw
+    global thick
+    from src import color
     from src import Shape
-    Shape.Shape(3).bind(draw, 4)
+    Shape.Shape(thick).bind(draw, 4)
     global button_1, button_2, button_3, button_4, button_5, button_6, button_7
     button_1['image'] = button_image_1
     button_2['image'] = button_image_1
@@ -161,9 +173,10 @@ def round():
         font=("YeonSung Regular", 26 * -1),
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_1 clicked"),
+        command=lambda:Shape.Shape(thick).bind(draw, 4),
         relief="flat"
     )
+
     button_1_.place(x=100.0, y=40.0, width=60.0, height=200.0)
     button_2_ = Button(
         text="线\n条\n颜\n色",
@@ -188,9 +201,10 @@ def round():
 
 
 def round_():
+    global thick
     global draw
     from src import Shape
-    Shape.Shape(3).bind(draw, 3)
+    Shape.Shape(thick).bind(draw, 3)
     global button_1, button_2, button_3, button_4, button_5, button_6, button_7
     button_1['image'] = button_image_1
     button_2['image'] = button_image_1
@@ -310,8 +324,9 @@ ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-window = Tk()
 
+window = Tk()
+thick=3
 window.geometry("1440x1024")
 window.configure(bg="#E0E0E0")
 
