@@ -3,11 +3,12 @@ from tkinter.simpledialog import *
 
 
 class Shape:
-    def __init__(self, thick=3):
+    def __init__(self, thick=3,f='black',fillf=''):
         self.thick = thick
         self.x = 0
         self.y = 0
-        self.fgcolor = "black"
+        self.fgcolor = f
+        self.fillf = fillf
         self.lastDraw = 0
         self.startDrawFlag = False
 
@@ -34,12 +35,12 @@ class Shape:
 
     def myRect(self, event):
         self.startDraw(event)
-        self.lastDraw = self.drawpad.create_rectangle(self.x, self.y, event.x, event.y,
+        self.lastDraw = self.drawpad.create_rectangle(self.x, self.y, event.x, event.y,fill= self.fillf,
                                                       outline=self.fgcolor, width=self.thick)
 
     def myOval(self, event):
         self.startDraw(event)
-        self.lastDraw = self.drawpad.create_oval(self.x, self.y, event.x, event.y,
+        self.lastDraw = self.drawpad.create_oval(self.x, self.y, event.x, event.y,fill= self.fillf,
                                                  outline=self.fgcolor, width=self.thick)
 
     def bind(self, canvas, choice):
