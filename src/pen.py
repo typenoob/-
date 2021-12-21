@@ -7,8 +7,9 @@ class Pen:
     recover = []  # 用于储存每次鼠标绘图的点构成的列表供恢复
     clear = []  # 用于记录是否使用过清空，因为列表可变，支持全局修改，所以用列表记录
 
-    def __init__(self, thick):
-        self.thick = thick
+    def __init__(self,thick=3):
+        self.thick =thick
+
 
     def paint(self, event):
         if not event:  # 松开鼠标左键时执行，清空记录点
@@ -26,7 +27,7 @@ class Pen:
             self.recover[-1].extend(point)  # 在新建的恢复记录列表里记录第一个点
         else:
             self.revoke[-1].append(
-                self.canvas.create_line(self.draw_point[0], self.draw_point[1], event.x, event.y, fill="#476042", width=self.thick,
+                self.canvas.create_line(self.draw_point[0], self.draw_point[1], event.x, event.y, fill="#000000", width=self.thick,
                                    tags="line")
             )  # 绘制的线段并保存到撤销记录的末次列表
             self.draw_point[:] = point  # 保存拖动点，覆盖上一次

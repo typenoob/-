@@ -1,18 +1,15 @@
-
 import tkinter as tk
 from tkinter.simpledialog import *
 
 
 class Shape:
-    def __init__(self, thick):
+    def __init__(self, thick=3):
         self.thick = thick
         self.x = 0
         self.y = 0
-        self.fgcolor = fgcolor
+        self.fgcolor = "black"
         self.lastDraw = 0
         self.startDrawFlag = False
-        self.drawpad = canvas
-        self.drawpad.pack()
 
     def stopDraw(self, event):
         self.startDrawFlag = False
@@ -46,6 +43,7 @@ class Shape:
                                                  outline=self.fgcolor, width=self.thick)
 
     def bind(self, canvas, choice):
+        self.drawpad=canvas
         if choice == 1:
             canvas.bind("<B1-Motion>", self.myLine)
         elif choice == 2:
@@ -65,7 +63,5 @@ if __name__ == '__main__':
     canvas = tk.Canvas(window, width=1000, height=1000,
                        highlightthickness=0, bg='#AFEEEE')
     canvas.pack()
-    color.fgcolor = color.color()
-    fgcolor = color.fgcolor
     Shape(3).bind(canvas, 3)
     window.mainloop()

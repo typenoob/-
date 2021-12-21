@@ -40,7 +40,7 @@ def choose():
         borderwidth=0,
         highlightthickness=0,
         command=lambda: print("button_1 clicked"),
-        relief="flat"
+        relief="flat",
     )
     button_2_.place(x=100.0, y=260.0, width=60.0, height=200.0)
     button_3_ = Button(
@@ -144,6 +144,9 @@ def eraser():
 
 
 def round():
+    global draw
+    from src import Shape
+    Shape.Shape(3).bind(draw, 4)
     global button_1, button_2, button_3, button_4, button_5, button_6, button_7
     button_1['image'] = button_image_1
     button_2['image'] = button_image_1
@@ -185,6 +188,9 @@ def round():
 
 
 def round_():
+    global draw
+    from src import Shape
+    Shape.Shape(3).bind(draw, 3)
     global button_1, button_2, button_3, button_4, button_5, button_6, button_7
     button_1['image'] = button_image_1
     button_2['image'] = button_image_1
@@ -303,7 +309,6 @@ ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
-
 
 window = Tk()
 
