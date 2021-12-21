@@ -39,6 +39,7 @@ class Pen:
         canvas.bind("<ButtonRelease-1>", lambda event: self.paint(0))
 
     def re(self, rev=0, rec=0):
+
         if rev and self.revoke:  # 撤销执行
             for i in self.revoke.pop(-1):
                 canvas.delete(i)  # pop弹出最后一个撤销列表，删除图像

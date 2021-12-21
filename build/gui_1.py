@@ -1,6 +1,5 @@
 from tkinter.constants import CENTER, TOP
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, font
-
 from pathlib import Path
 import sys
 sys.path.append(".")
@@ -458,7 +457,7 @@ button_11 = Button(
     image=button_image_6,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_1 clicked"),
+    command=lambda: draw.delete('all'),
     relief="flat"
 )
 button_1.place(
