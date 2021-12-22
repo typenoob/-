@@ -112,7 +112,7 @@ def paint():
     )
     button_1_.place(x=100.0, y=40.0, width=60.0, height=200.0)
     button_2_ = Button(
-        text="画\n笔\n颜\n色\n:",
+        text="画\n笔\n颜\n色\n..",
         bg="#FDF419",
         font=("YeonSung Regular", 26 * -1),
         borderwidth=0,
@@ -155,7 +155,7 @@ def eraser():
     )
     button_1_.place(x=100.0, y=40.0, width=60.0, height=200.0)
     button_2_ = Button(
-        text="中\n型",
+        text="大\n型",
         bg="#FDF419",
         font=("YeonSung Regular", 26 * -1),
         borderwidth=0,
@@ -165,12 +165,12 @@ def eraser():
     )
     button_2_.place(x=100.0, y=260.0, width=60.0, height=200.0)
     button_3_ = Button(
-        text="大\n型",
+        text="清\n屏",
         bg="#FDF419",
         font=("YeonSung Regular", 26 * -1),
         borderwidth=0,
         highlightthickness=0,
-        command=lambda:eraser.Eraser(3).bind(draw),
+        command=lambda:draw.delete("all"),
         relief="flat"
     )
     button_3_.place(x=100.0, y=480.0, width=60.0, height=200.0)
@@ -276,7 +276,7 @@ def pick():
     button_6['image'] = button_image_2
     button_7['image'] = button_image_1
     button_1_ = Button(
-        text="设\n置\n颜\n色\n:",
+        text="设\n置\n颜\n色\n",
         bg="#FDF419",
         font=("YeonSung Regular", 26 * -1),
         borderwidth=0,
@@ -307,7 +307,7 @@ def pick():
     button_3_.place(x=100.0, y=480.0, width=60.0, height=200.0)
 
 def text():
-    draw.bind('<B1-Motion>', drawText)
+    draw.bind('<ButtonRelease-1>', drawText)
     global button_1, button_2, button_3, button_4, button_5, button_6, button_7
     button_1['image'] = button_image_1
     button_2['image'] = button_image_1
@@ -327,8 +327,8 @@ def text():
     )
     button_1_.place(x=100.0, y=40.0, width=60.0, height=200.0)
     button_2_ = Button(
-        text="竖\n排\n文\n字",
-        bg="#FDF419",
+        text="",
+        bg=fgcolor,
         font=("YeonSung Regular", 26 * -1),
         borderwidth=0,
         highlightthickness=0,
@@ -337,7 +337,7 @@ def text():
     )
     button_2_.place(x=100.0, y=260.0, width=60.0, height=200.0)
     button_3_ = Button(
-        text="文\n字\n样\n式",
+        text="微\n软\n雅\n黑",
         bg="#FDF419",
         font=("YeonSung Regular", 26 * -1),
         borderwidth=0,
@@ -490,7 +490,7 @@ button_11 = Button(
     image=button_image_6,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda:draw.delete("all"),
+    command=lambda:print(""),
     relief="flat"
 )
 button_1.place(

@@ -38,8 +38,8 @@ class Pen:
         canvas.bind("<B1-Motion>", self.paint)  # 设定拖动鼠标左键画线段
         canvas.bind("<ButtonRelease-1>", lambda event: self.paint(0))
 
-    def re(self, rev=0, rec=0):
-
+    def re(self,c, rev=0, rec=0):
+        canvas=c
         if rev and self.revoke:  # 撤销执行
             for i in self.revoke.pop(-1):
                 canvas.delete(i)  # pop弹出最后一个撤销列表，删除图像
@@ -48,11 +48,11 @@ class Pen:
             if self.clear:
                 for i in self.recover:
                     self.revoke.append(
-                        [canvas.create_line(i, fill="#476042", width=self.thick, tags="line")])
+                        [canvas.create_line(i, fill=self.fgcolor, width=self.thick, tags="line")])
                 self.clear[:] = []
             else:
                 self.revoke.append([canvas.create_line(
-                    self.recover[len(self.revoke)], fill="#476042", width=self.thick, tags="line")])
+                    self.recover[len(self.revoke)], fill=self.fgcolor, width=self.thick, tags="line")])
         # 清空功能
 
     def clr(self):
@@ -71,8 +71,8 @@ if __name__ == '__main__':
     canvas.pack()
     Pen(3).bind(canvas)
     menu = tk.Menu(window, tearoff=0)  # 不加 tearoff=0 的会出现可弹出选项
-    menu.add_command(label="撤销", command=lambda: Pen(3).re(rev=1))
-    menu.add_command(label="恢复", command=lambda: Pen(3).re(rec=1))
+    menu.add_command(label="撤销", command=lambda: Pen(3).re(canvas,rev=1))
+    menu.add_command(label="恢复", command=lambda: Pen(3).re(canvas,rec=1))
     menu.add_command(label="清空", command=Pen(3).clr)
     canvas.bind(
         "<Button-3>", lambda event: menu.post(event.x_root, event.y_root))
