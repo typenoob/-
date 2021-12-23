@@ -46,45 +46,45 @@ def thickreduce(t):
     round()
     return thick
 
-def choose():
-    global button_1, button_2, button_3, button_4, button_5, button_6, button_7
-    button_1['image'] = button_image_2
-    button_2['image'] = button_image_1
-    button_3['image'] = button_image_1
-    button_4['image'] = button_image_1
-    button_5['image'] = button_image_1
-    button_6['image'] = button_image_1
-    button_7['image'] = button_image_1
-    button_1_ = Button(
-        text="相\n同\n颜\n色\n选\n取",
-        bg="#FDF419",
-        font=("YeonSung Regular", 26 * -1),
-        borderwidth=0,
-        highlightthickness=0,
-        command=lambda: print("button_1 clicked") ,
-        relief="flat"
-    )
-    button_1_.place(x=100.0, y=40.0, width=60.0, height=200.0)
-    button_2_ = Button(
-        text="矩\n形\n选\n取",
-        bg="#FDF419",
-        font=("YeonSung Regular", 26 * -1),
-        borderwidth=0,
-        highlightthickness=0,
-        command=lambda: print("button_1 clicked"),
-        relief="flat",
-    )
-    button_2_.place(x=100.0, y=260.0, width=60.0, height=200.0)
-    button_3_ = Button(
-        text="圆\n形\n选\n取",
-        bg="#FDF419",
-        font=("YeonSung Regular", 26 * -1),
-        borderwidth=0,
-        highlightthickness=0,
-        command=lambda: print("button_1 clicked"),
-        relief="flat"
-    )
-    button_3_.place(x=100.0, y=480.0, width=60.0, height=200.0)
+# def choose():
+#     global button_1, button_2, button_3, button_4, button_5, button_6, button_7
+#     button_1['image'] = button_image_2
+#     button_2['image'] = button_image_1
+#     button_3['image'] = button_image_1
+#     button_4['image'] = button_image_1
+#     button_5['image'] = button_image_1
+#     button_6['image'] = button_image_1
+#     button_7['image'] = button_image_1
+#     button_1_ = Button(
+#         text="相\n同\n颜\n色\n选\n取",
+#         bg="#FDF419",
+#         font=("YeonSung Regular", 26 * -1),
+#         borderwidth=0,
+#         highlightthickness=0,
+#         command=lambda: print("button_1 clicked") ,
+#         relief="flat"
+#     )
+#     button_1_.place(x=100.0, y=40.0, width=60.0, height=200.0)
+#     button_2_ = Button(
+#         text="矩\n形\n选\n取",
+#         bg="#FDF419",
+#         font=("YeonSung Regular", 26 * -1),
+#         borderwidth=0,
+#         highlightthickness=0,
+#         command=lambda: print("button_1 clicked"),
+#         relief="flat",
+#     )
+#     button_2_.place(x=100.0, y=260.0, width=60.0, height=200.0)
+#     button_3_ = Button(
+#         text="圆\n形\n选\n取",
+#         bg="#FDF419",
+#         font=("YeonSung Regular", 26 * -1),
+#         borderwidth=0,
+#         highlightthickness=0,
+#         command=lambda: print("button_1 clicked"),
+#         relief="flat"
+#     )
+#     button_3_.place(x=100.0, y=480.0, width=60.0, height=200.0)
 
 
 def paint():
@@ -107,7 +107,7 @@ def paint():
         font=("YeonSung Regular", 26 * -1),
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_1 clicked") ,
+        command=lambda: round(),
         relief="flat"
     )
     button_1_.place(x=100.0, y=40.0, width=60.0, height=200.0)
@@ -117,7 +117,7 @@ def paint():
         font=("YeonSung Regular", 26 * -1),
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_1 clicked"),
+        command=lambda: pick(),
         relief="flat"
     )
     button_2_.place(x=100.0, y=260.0, width=60.0, height=200.0)
@@ -327,12 +327,12 @@ def text():
     )
     button_1_.place(x=100.0, y=40.0, width=60.0, height=200.0)
     button_2_ = Button(
-        text="",
-        bg=fgcolor,
+        text="字\n体\n颜\n色",
+        bg='#FDF419',
         font=("YeonSung Regular", 26 * -1),
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_1 clicked"),
+        command=lambda: pick(),
         relief="flat"
     )
     button_2_.place(x=100.0, y=260.0, width=60.0, height=200.0)
@@ -383,18 +383,18 @@ button_1 = Button(
     command=lambda: print("button_1 clicked"),
     relief="flat"
 )
-button_image_1 = PhotoImage(
-    file=relative_to_assets("button_4.png"))
-button_1 = Button(
-    image=button_image_1,
-    font=("YeonSung Regular", 40 * -1),
-    compound=CENTER,
-    text="选择",
-    borderwidth=0,
-    highlightthickness=0,
-    command=choose,
-    relief="flat"
-)
+# button_image_1 = PhotoImage(
+#     file=relative_to_assets("button_4.png"))
+# button_1 = Button(
+#     image=button_image_1,
+#     font=("YeonSung Regular", 40 * -1),
+#     compound=CENTER,
+#     text="选择",
+#     borderwidth=0,
+#     highlightthickness=0,
+#     command=choose,
+#     relief="flat"
+# )
 button_image_2 = PhotoImage(
     file=relative_to_assets("button_5.png"))
 button_image_3 = PhotoImage(
@@ -493,12 +493,12 @@ button_11 = Button(
     command=lambda:print(""),
     relief="flat"
 )
-button_1.place(
-    x=100.0,
-    y=690.0,
-    width=100.0,
-    height=100.0
-)
+# button_1.place(
+#     x=100.0,
+#     y=690.0,
+#     width=100.0,
+#     height=100.0
+# )
 button_2.place(
     x=275.0,
     y=690.0,
