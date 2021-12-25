@@ -14,5 +14,4 @@ canvas = Canvas(
     relief="ridge"
 )
 gui_main.entry(canvas, root)
-root.resizable(False, False)
 root.mainloop()

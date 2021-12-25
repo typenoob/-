@@ -1,5 +1,7 @@
 import a_init
 import time
+import os
+import sys
 from src import predict
 from src import pen
 from src import file
@@ -20,7 +22,9 @@ import gui_main
 # Explicit imports to satisfy Flake8
 
 OUTPUT_PATH = Path(__file__).parent
+# OUTPUT_PATH = Path(os.path.dirname(os.path.realpath(sys.executable)))
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
+TMP_PATH = OUTPUT_PATH / Path("./tmp")
 thick = 3
 fgcolor = "black"  # 全局变量画笔颜色 默认为黑色
 fillf = ''  # 全局变量填充颜色，默认为透明
@@ -28,6 +32,10 @@ fillf = ''  # 全局变量填充颜色，默认为透明
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
+
+
+def relative_to_tmp(path: str) -> Path:
+    return TMP_PATH / Path(path)
 
 
 def trans(window, draw, text, text1):
@@ -44,14 +52,17 @@ def trans(window, draw, text, text1):
 
 def _async(window, draw, text):
     global result
-    file.save(window, draw, "./tmp/tmp.png")
-    result = eval(predict.predict(predict.encode(
-        "./tmp/tmp.png")))['prediction']['names']
-    str = ''
-    for i in result:
-        str += i+'\n'
-    text.delete('1.0', 'end')
-    text.insert('insert', str)
+    try:
+        file.save(window, draw, relative_to_tmp("tmp.png"))
+        result = eval(predict.predict(predict.encode(
+            relative_to_tmp("tmp.png"))))['prediction']['names']
+        str = ''
+        for i in result:
+            str += i+'\n'
+        text.delete('1.0', 'end')
+        text.insert('insert', str)
+    except:
+        pass
 
 
 def jump_main(canvas, root):

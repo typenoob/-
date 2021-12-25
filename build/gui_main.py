@@ -4,13 +4,15 @@
 
 
 from pathlib import Path
-
+import os
+import sys
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 import gui_quick
 import gui_create
 OUTPUT_PATH = Path(__file__).parent
+# OUTPUT_PATH=Path(os.path.dirname(os.path.realpath(sys.executable)))
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 
 
