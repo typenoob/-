@@ -6,25 +6,16 @@
 
 ## 快速开始
 
-### 直接打开可执行文件
+### 下载我们发布的版本
 
-```bash```
-./dist/gui.exe
-```bash```
+1. 在右侧的release中选择稳定的版本，选择下载dist.zip文件
+2. 解压缩，运行gui.exe程序
 
-### 运行python文件
+### 自行编译
 
-1. 安装依赖模块
-
-```bash```
-pip install -r requirements.txt
-```bash```
-
-2. 运行gui.py
-
-```bash```
-python ./build/gui.py
-```bash```
+1. 确保机器上安装有python3以上的python和pip
+2. 安装依赖模块`pip install -r requirements.tx`
+3. 运行gui.py`python ./build/gui.py`
 
 ## 目录结构
 
@@ -50,6 +41,7 @@ python ./build/gui.py
 │  └─tests
 │      └─data
 ├─src # 核心源代码
+```
 
 ## 提供的类或函数接口
 
