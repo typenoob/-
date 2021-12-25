@@ -3,12 +3,13 @@ from tkinter.simpledialog import *
 
 
 class Eraser:
-    def __init__(self,t):
+    def __init__(self, t):
         self.x = 0
         self.y = 0
         self.lastDraw = 0
         self.startDrawFlag = False
         self.t = t
+
     def stopDraw(self, event):
         self.startDrawFlag = False
         self.lastDraw = 0
@@ -41,6 +42,11 @@ class Eraser:
         self.drawpad = canvas
         canvas.bind("<B1-Motion>", self.myEraser)
         canvas.bind("<ButtonRelease-1>", self.stopDraw)
+
+    def _bind(self, canvas):
+        self.drawpad = canvas
+        canvas.bind("<B3-Motion>", self.myEraser)
+        canvas.bind("<ButtonRelease-3>", self.stopDraw)
 
 
 if __name__ == '__main__':
