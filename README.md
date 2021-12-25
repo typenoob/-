@@ -21,9 +21,8 @@
 
 ```
 ├─build # 生成的gui.py文件
-│  ├─assets
-│  ├─gui
-│  ├─tmp
+│  ├─assets # 用到的图片素材
+│  ├─tmp # 临时产生的截图
 │  └─__pycache__
 ├─dist # 生成的exe文件
 │  ├─assets
