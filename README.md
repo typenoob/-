@@ -6,33 +6,50 @@
 
 ## 快速开始
 
-### 打包为可执行文件
+### 直接打开可执行文件
 
 ```bash```
-pyinstaller -F -w ./build/gui.py
+./dist/gui.exe
+```bash```
+
+### 运行python文件
+
+1. 安装依赖模块
+
+```bash```
+pip install -r requirements.txt
+```bash```
+
+2. 运行gui.py
+
+```bash```
+python ./build/gui.py
 ```bash```
 
 ## 目录结构
 
 ```
-│  1.py
-│  demo.py
-│  README.md
-│  requirements.txt # 依赖的pip模块
-│
-├─build # 利用Tkinter-Designer构建的界面
-│  │  gui.py
-│  │
-│  └─assets # 用到的多媒体素材
+├─build # 生成的gui.py文件
+│  ├─assets
+│  ├─gui
+│  ├─tmp
+│  └─__pycache__
+├─dist # 生成的exe文件
+│  ├─assets
+│  └─tmp
 ├─doodle-classification-server # 基于docker构建涂鸦预测并提供http api的项目
-│
-│
-└─src # 源代码
-    │  main.py
-    │  pen.py
-    │  predict.py
-    │  function.py
-```
+│  ├─docs
+│  │  └─assets
+│  ├─doodle_classification
+│  │  ├─magic_pencil_data
+│  │  ├─model
+│  │  └─routers
+│  ├─notebooks
+│  │  └─.ipynb_checkpoints
+│  ├─templates
+│  └─tests
+│      └─data
+├─src # 核心源代码
 
 ## 提供的类或函数接口
 
