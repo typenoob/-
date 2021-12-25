@@ -14,17 +14,8 @@
 ### 自行编译
 
 1. 确保机器上安装有python3以上的python和pip
-2. 安装依赖模块
-
-```bash```
-pip install -r requirements.txt
-```bash```
-
-3. 运行gui.py
-
-```bash```
-python ./build/gui.py
-```bash```
+2. 安装依赖模块`pip install -r requirements.tx`
+3. 运行gui.py`python ./build/gui.py`
 
 ## 目录结构
 
